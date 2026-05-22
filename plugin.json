@@ -1,5 +1,5 @@
 {
-    "$schema": "https://github.com/AvengeMedia/DankMaterialShell/raw/refs/heads/master/PLUGINS/plugin-schema.json",
+    "$schema": "https://raw.githubusercontent.com/AvengeMedia/DankMaterialShell/master/quickshell/PLUGINS/plugin-schema.json",
     "id": "tlpPowerProfile",
     "name": "TLP Power Profile",
     "description": "Battery widget backed by TLP. Exposes editable power-profile presets and battery-charge thresholds — features that power-profiles-daemon does not provide.",
