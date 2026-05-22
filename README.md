@@ -10,6 +10,23 @@ The widget shows battery state and exposes TLP's power modes (`tlp ac` / `tlp ba
 - Configurable privilege escalation: `pkexec` (default), `sudo -n`, or `none`.
 - Battery charge thresholds with start/stop sliders + Apply button.
 
+<details>
+<summary>Screenshots</summary>
+
+**Popout in the bar** — battery info, profile switcher, current TLP mode.
+
+![Bar pill + popout](assets/screenshot1.jpg)
+
+**Settings — General + Power profiles** — poll interval, privilege mode, editable profile list.
+
+![Settings: General + Power profiles](assets/screenshot2.jpg)
+
+**Settings — Charge thresholds** — start/stop sliders + Apply button, hidden on machines without a battery.
+
+![Settings: Charge thresholds](assets/screenshot3.jpg)
+
+</details>
+
 ## Install
 
 > NixOS users: skip this section and jump to [NixOS](#nixos) below — the flake handles steps 2 and 3 declaratively.
@@ -91,7 +108,7 @@ Add this repo as an input and import the module:
 
 ```nix
 {
-  inputs.tlp-power-profile.url = "github:<you>/tlp-power-profile";
+  inputs.tlp-power-profile.url = "github:peturh/tlp-power-profile";
 
   outputs = { self, nixpkgs, tlp-power-profile, ... }: {
     nixosConfigurations.<host> = nixpkgs.lib.nixosSystem {
@@ -151,11 +168,11 @@ All settings live in **DMS Settings → Plugins → TLP Power Profile**:
 
 ## Default profiles
 
-| Profile     | Command                                  |
-|-------------|------------------------------------------|
-| Power Save  | `tlp bat`                                |
-| Balanced    | `tlp ac`                                 |
-| Performance | `tlp-power-profile-helper performance`   |
+| Profile     | Command                                |
+| ----------- | -------------------------------------- |
+| Power Save  | `tlp bat`                              |
+| Balanced    | `tlp ac`                               |
+| Performance | `tlp-power-profile-helper performance` |
 
 If you skip the helper script install, change *Performance* to `tlp ac` (or any command of your choice).
 
