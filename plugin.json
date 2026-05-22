@@ -1,0 +1,17 @@
+{
+    "$schema": "https://github.com/AvengeMedia/DankMaterialShell/raw/refs/heads/master/PLUGINS/plugin-schema.json",
+    "id": "tlpPowerProfile",
+    "name": "TLP Power Profile",
+    "description": "Battery widget backed by TLP. Exposes editable power-profile presets and battery-charge thresholds — features that power-profiles-daemon does not provide.",
+    "version": "0.1.0",
+    "license": "MIT",
+    "author": "petur",
+    "icon": "bolt",
+    "type": "widget",
+    "capabilities": ["dankbar-widget"],
+    "component": "./TlpPowerProfile.qml",
+    "settings": "./TlpPowerProfileSettings.qml",
+    "requires_dms": ">=1.4.0",
+    "requires": ["tlp"],
+    "permissions": ["process", "settings_read", "settings_write"]
+}
